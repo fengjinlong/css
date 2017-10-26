@@ -1,0 +1,525 @@
+github.com   fengjinlong   fjl19870403    123456
+
+
+图片随屏幕宽的变化而变化而且居中
+ background-position: center top;
+ background-size: cover;
+
+
+contenteditable="true" 可编辑内容div的属性
+//        var re=/<[^>]+>/g;匹配标签
+//        var br=/<br(.+?)>/g;匹配<br>
+
+元素距离屏幕高度：document.getElementById('d').offsetTop；
+
+
+  
+网页可见区域宽： document.body.clientWidth  
+网页可见区域高： document.body.clientHeight  
+网页可见区域宽： document.body.offsetWidth (包括边线的宽)  
+网页可见区域高： document.body.offsetHeight (包括边线的高)  
+网页正文全文宽： document.body.scrollWidth  
+网页正文全文高： document.body.scrollHeight  
+网页被卷去的高： document.body.scrollTop  
+网页被卷去的左： document.body.scrollLeft  
+网页正文部分上： window.screenTop  
+网页正文部分左： window.screenLeft  
+屏幕分辨率的高： window.screen.height  
+屏幕分辨率的宽： window.screen.width  
+屏幕可用工作区高度： window.screen.availHeight  
+屏幕可用工作区宽度： window.screen.availWidth  
+  
+
+
+
+超过两行变成...形势
+<p style="
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+">
+
+
+
+http://www.swiper.com.cn/demo/index.html之前你问我要滑动屏幕的我记错了，这个才是
+
+左右滑动
+ <link rel="stylesheet" href="css/swiper.3.2.0.min.css"/>
+    <script src="js/swiper.3.2.0.min.js"></script>
+    <div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">2015</div>
+        <div class="swiper-slide">2016</div>
+    </div>
+</div>
+
+var swiper = new Swiper('.swiper-container');
+
+模糊图片
+ .parent{
+            background: url("images/1b.jpg")no-repeat;
+        }
+        .child{
+            background: inherit;
+            -webkit-filter: blur(4px);
+
+            -moz-filter: blur(5px);
+
+            -o-filter: blur(5px);
+
+            -ms-filter: blur(5px);
+        }
+
+
+
+
+背景渐变
+        background:-webkit-linear-gradient(right,#FF8A16,#FF621A);
+        background:-moz-linear-gradient(right,#FF8A16,#FF621A);
+background:-webkit-linear-gradient(right,#FF8A16,#FF621A);
+
+background:-webkit-gradient(linear, 0%开始横 0%开始纵, 0%结束横 100%结束纵,from(#FFFFFF), to(#F3F3F3));
+ background: -webkit-linear-gradient(bottom,rgba(0,0,0,.6)40%,rgba(255,255,255,.1)100%);
+
+
+
+
+细字体
+font-family: segoe UI light;
+强制不换行
+white-space:nowrap
+div宽度限制字数
+white-space:nowrap;
+    text-overflow:ellipsis;
+    -o-text-overflow:ellipsis;
+    overflow: hidden;
+
+横向滚动条
+overflow-x: scroll;
+有过有必要加white-space:nowrap
+
+
+placeholder换颜色
+input[class='val']::-webkit-input-placeholder { /* WebKit browsers */
+            color: green;
+        }
+        input[class='val']:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color: green;
+        }
+        input[class='val']:-moz-placeholder { /* Mozilla Firefox 19+ */
+            color: green;
+        }
+       input[class='val'] :-ms-input-placeholder { /* Internet Explorer 10+ */
+            color: green;
+        }
+
+
+
+
+http://123.57.232.230/html/111.html
+
+字体适应问题
+html {
+	font-size: 62.5%;/*10 ÷ 16 × 100% = 62.5%;默认10px*/
+}
+ele{
+	font-size:1.5rem;    ==》15px
+}
+ var a = $('html').width();
+    if(a>375){
+        $('html').css('font-size','75%');
+    }
+
+
+
+
+<input type="text"required oninvalid="setCustomValidity('必须填写！222');" oninput="setCustomValidity('输入时执行的方法');"/>
+
+-webkit-tap-highlight-color 是一个 不规范的属性（unsupported WebKit property），它没有出现在 CSS 规范草案中
+取值：color/transparentiOS 1.1.1及更高版本的Safari浏览器可用
+大部分android手机也是支持的，只是显示效果有所不同。
+
+
+空心字
+    -webkit-text-fill-color:white;/*伪空心的文字，与背景色有关*/
+    -webkit-text-stroke-color:#333;
+    -webkit-text-stroke-width:1px;      /*W3C标准*/
+    text-fill-color:white;
+    text-stroke-color:#ddd;
+
+
+textarea{支持placeholder
+   resize : none;不改变大小
+maxlength="500"//写在标签里
+}
+
+
+
+
+   transform: rotate(350deg);
+    -o-transform: rotate(350deg);
+    -webkit-transform: rotate(350deg);
+    -moz-transform: rotate(350deg);
+
+
+
+
+火狐scrollTop
+$('html,body').animate({'scrollTop':eletop-62});
+
+var a = $().width();
+var a = $().width("456");
+var b = Math.min.apply(null,Arr);最小值
+var index = $.inArray(min,arr);返回数组值min的索引
+。eq（）
+$().css("width","");$().css({"":""},{});
+$().each(function(index,ele){});数组   （索引，值）
+$()>div;儿子辈；$() div;子孙辈；
+
+
+禁止图片拖拽
+for(i in document.images){
+        document.images[i].ondragstart=function(){
+            return false;
+        };
+    }
+
+
+
+上下滑动
+
+    function load() {
+        var a,aa;
+        document.addEventListener('touchstart', touch, false);
+        document.addEventListener('touchmove', touch, false);
+        document.addEventListener('touchend', touch, false);
+        function touch(event) {
+            var event = event || window.event;
+            var oInp = document.getElementById("inp");
+            switch (event.type) {
+                case "touchstart":
+//                    event.preventDefault();
+                    oInp.innerHTML = "Touch started (" + event.touches[0].clientX + "," + event.touches[0].clientY + ")";
+                         a = parseInt(event.touches[0].clientY);
+                    break;
+                case "touchend":
+//                    event.preventDefault();
+                    oInp.innerHTML = "Touch end (" + event.changedTouches[0].clientX + "," + event.changedTouches[0].clientY + ")";
+                     aa = parseInt(event.changedTouches[0].clientY);
+//                    console.log(aa);
+                    console.log(aa-a);
+                    if((aa-a)>160){
+                        console.log("UP");
+                    }else{
+//                        console.log("DOWN");
+                    }
+                    break;
+                case "touchmove":
+//                    event.preventDefault();
+                    oInp.innerHTML = "<br>Touch moved (" + event.touches[0].clientX + "," + event.touches[0].clientY + ")";
+                    break;
+            }
+        }
+    }
+window.addEventListener('load', load, false);
+
+
+
+
+complete 属性可返回浏览器是否已完成对图像的加载。
+
+
+arr.forEach(function(ele,inde,arr){});
+
+
+
+
+var linum = $("li").index($(".child"));返回序列号
+
+
+
+正则表达式
+年月日
+var regExp = /^[1-9]{4}(\/|-|\.)(0[1-9]|1[0-2])\1(0(1-9)|1\d|2\d|3[0-1])$/;
+var dat = "1355.03.30";
+var a = regExp.test(dat);
+regExp有一个'\1',意思是跟前面的第一个（）匹配相同
+
+
+
+ var a = [1,2];var b = ["a","s"];
+    var c = [...a,...b]
+    console.log(c);[1, 2, "a", "s"]
+
+
+表单专题
+input
+required：表单的值是否必须
+autofocus  自动获得焦点
+pattern="^\d{2,4}$"正则验证
+autocomplete="on\off"当网页提交跳转后在返回时，是否自动记录并回填提交的值
+min和max：指定具有数值值的表单的最小值和最大值。type=number
+step：指定数值值每次变化的大小。
+list：该属性与datalist元素结合使用，为input元素指定可选择的下拉列表。如：
+	<input type="email" id="contacts" list="contactList">
+	<datalist id="contactList"> 
+		<option value="x@example.com" label="Racer X"> 
+		<option value="peter@example.com" label="Peter"> 
+	</datalist>
+
+
+input.validity.valueMissing : 输入值为空 
+input.checkValidity();不需要提交立即验证
+
+input.validity.valid是对这8个属性的总结，如果8个方面的验证都通过，则valid值为true，否则为false。
+input.validity.patternMissmatch 对应于input的pattern属性， 输入的值又违反了正则表达式的内容，那么这个状态就是true
+
+
+trim（）去掉字符序列左边和右边的空格
+
+
+js的数组迭代器函数map和filter，可以遍历数组时产生新的数组，和python的map函数很类似
+1）filter是满足条件的留下，是对原数组的过滤；
+2）map则是对原数组的加工，映射成一一映射的新数组
+该filter()方法创建一个新的匹配过滤条件的数组。
+var arr = [1,2,3,2,1];
+    var newArr = [];
+    arr.filter(function(a){
+        if(newArr.indexOf(a) == -1){
+            newArr.push(a)
+        }
+    })
+    console.log(newArr);
+
+arr.forEach(function(a,b,c){
+  
+})
+Array的reduce()把一个函数作用在这个Array的[x1, x2, x3...]上，这个函数必须接收两个参数，reduce()把结果继续和序列的下一个元素做累积计算   以下求和
+arr.reduce(function(a,b){
+	return a+b;
+});
+
+Map是一组键值对的结构，具有极快的查找速度。
+var m = new Map([['Michael', 95], ['Bob', 75], ['Tracy', 85]]);
+m.get('Michael'); // 95
+var m = new Map(); // 空Map
+m.set('Adam', 67); // 添加新的key-value
+m.set('Bob', 59);
+m.has('Adam'); // 是否存在key 'Adam': true
+m.get('Adam'); // 67
+m.delete('Adam'); // 删除key 'Adam'
+m.get('Adam'); // undefined
+Set和Map类似，也是一组key的集合，但不存储value。由于key不能重复，所以，在Set中，没有重复的key。
+var s = new Set([1, 2, 3, 3, '3']);
+s; // Set {1, 2, 3, "3"}
+
+
+数组去重复终极方法（）；
+var arr = [1,1,2,'q','qq','q'];
+var na = [];
+    for(var i of (new Set(arr)).keys()){
+        na.push(i);
+    }
+console.log(na);
+或者
+var arr = [1,1,2,'q','qq','q'];
+var na = [];
+(new Set(arr)).forEach(function(n){
+    na.push(n);
+});
+console.log(na);
+或者只要看不需要输出
+var arr = [1,1,2,'q','qq','q'];
+console.log(new Set(arr));
+摘自
+https://github.com/lukehoban/es6features
+
+
+
+map “映射”  原数组被“映射”成对应新数组
+	类似forEach
+		[].map(function(value, index, array) {},[执行map时this指向的对象]);
+	可以利用map方法方便获得对象数组中的特定属性值
+		var users = [{name: "张含韵", "email": "zhang@email.com"}];
+		var emails = users.map(function (user) { return user.email; });
+
+
+reduce  迭代”、“递归”
+	var sum = [1, 2, 3, 4].reduce(function (previous, current, index, array) {
+  		return previous + current;
+	});
+	开始的previous值等于数组的第一个元素，从而current值在第一次调用的时候就是2；
+	有了reduce，我们可以轻松实现二维数组的扁平化：
+		var matrix = [[1, 2],[3, 4],[5, 6]];// 二维数组扁平化
+		var flatten = matrix.reduce(function (previous, current) {return previous.concat(current);});
+
+
+call    让a对象来执行b对象的方法
+		b.b_fun.call(a,[argu_b]);
+	使用 Class1 对象代替this对象，那么 Class2 中不就有Class1 的所有属性和方法
+		 function Class1()
+    		{
+        		this.showTxt = function(txt)
+        		{
+            		alert(txt);
+        		}
+    		}
+ 		function Class3()
+    		{
+        		this.showTxt = function(txt)
+        		{
+            		alert(txt);
+        		}
+    		}
+    		function Class2()
+    		{
+        		Class1.call(this);
+   		 }
+    		var c2 = new Class2();
+    		c2.showTxt("cc");
+	使用两个 call 就实现多重继承
+		function Class2()
+    		{
+        		Class1.call(this);
+			Class3.call(this);
+   		 }
+    		var c2 = new Class2();
+
+apply   call 的第二个参数可以是任意类型，而apply的第二个参数必须是数组
+
+	1.因为Math.max 参数里面不支持Math.max([param1,param2]) 也就是数组
+但是它支持Math.max(param1,param2,param3…),所以可以根据刚才apply的那个特点来解决 var max=Math.max.apply(null,array),这样轻易的可以得到一个数组中最大的一项(apply会将一个数组装换为一个参数接一个参数的传递给方法)
+	2.var min=Math.min.apply(null,array);
+	3.Array.prototype.push 可以实现两个数组合并  Array.prototype.push.apply(arr1,arr2)返回长度; arr1改变 
+	
+
+
+	,比如apply示例里面传递了参数arguments,这个参数是数组类型,并且在调用Person的时候参数的列表是对应一致的(也就是Person和Student的参数列表前两位是一致的) 就可以采用 apply , 如果我的Person的参数列表是这样的(age,name),而Student的参数列表是(name,age,grade),这样就可以用call来实现了,也就是直接指定参数列表对应值的位置(Person.call(this,age,name,grade));
+
+ES5中新增了写数组方法，如下：
+forEach (js v1.6)
+map (js v1.6)
+filter (js v1.6)
+some (js v1.6)
+every (js v1.6)
+indexOf (js v1.6)
+lastIndexOf (js v1.6)
+reduce (js v1.8)
+reduceRight (js v1.8)
+
+
+闭包  最大用处有两个，一个是前面提到的可以读取函数内部的变量，另一个就是让这些变量的值始终保持在内存中。
+
+
+
+
+this指向和箭头函数：
+function Person(name) {
+    this.name = name;
+}
+
+Person.prototype.prefixName = function (arr) {
+    return arr.map(function (character) {
+        return this.name + character; // Cannot read property 'name' of undefined  此时this指window
+    });
+};
+解决方案
+1把 this 存在一个变量中：	
+Person.prototype.prefixName = function (arr) {
+    var that = this;//   此时this指 Person
+    return arr.map(function (character) {
+        return that.name + character; 
+    });
+};
+2传递一个合适的 this 上下文：
+Person.prototype.prefixName = function (arr) {
+    return arr.map(function (character) {
+        return this.name + character;
+    }, this);
+}
+3当你需要维护一个 this 上下文的时候使用 箭头函数 尽可能使用箭头函数代替原来的写法。
+Person.prototype.prefixName = function (arr) {
+    return arr.map(character => this.name + character);
+};
+
+
+直接遍历数组元素
+	let arr = [1,2,3,4,5];
+   		for(let ele of arr){
+       			console.log(ele);
+    	}
+
+
+
+
+callee 属性是 arguments 对象的一个成员，它表示对函数对象本身的引用，这有利于匿名函数的递归或者保证函数的封装性，例如下边示例的递归计算1到n的自然数之和。
+arguments.length是实参长度，arguments.callee.length是形参长度
+var sum = function(n) {
+    if (1 == n)
+        return 1;
+    else
+        return n + sum(n - 1);
+}
+var a = function(b){
+        if (b>0){
+            console.log(b);
+            return arguments.callee(b-1);
+        }
+    }
+    a(10);
+
+
+
+
+
+内元素上下左右都居中
+{
+	width: 200px;
+    height: 200px;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+var fragment = document.createDocumentFragment();
+
+
+
+body背景图不动{    background-attachment:fixed;
+}
+
+背景图片不随着滚动条动
+#liebiao{    
+	height:689px;
+         overflow:auto;
+         }
+
+$('#liebiao').scrollTop($('#liebiao')[0].scrollHeight);
+
+
+
+
+
+
+    function funQuesstion($p) {
+        var d=document.createDocumentFragment();
+        var len = $p.index();
+        for(var i=0;i<len+1;i++){
+//            d.appendChild($($p.parent().find('.quesstion')[i]).clone()[0])
+            $(d).append($($p.parent().find('.quesstion')[i]).clone())
+        }
+//        document.getElementById("div1").appendChild(d);
+        $("#div1").append($(d));
+    }
+
+
+
+
+<div class="line-through">￥123456</div>
+.line-through{
+    text-decoration:line-through;
+}
